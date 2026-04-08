@@ -1,4 +1,180 @@
 <!DOCTYPE html>
+<html>
+<head>
+  <title>KabadiPro</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial;
+      background: #000;
+      color: white;
+    }
+
+    header {
+      text-align: center;
+      padding: 20px;
+      background: #111;
+      box-shadow: 0 0 20px rgba(255,215,0,0.3);
+    }
+
+    .logo {
+      width: 220px;
+      border-radius: 12px;
+      box-shadow: 0 0 20px gold;
+    }
+
+    .tagline {
+      color: gold;
+      font-weight: bold;
+      margin-top: 10px;
+    }
+
+    .container {
+      padding: 15px;
+    }
+
+    .card {
+      background: #111;
+      padding: 15px;
+      border-radius: 12px;
+      margin-bottom: 20px;
+      box-shadow: 0 0 15px rgba(255,215,0,0.2);
+    }
+
+    h2 {
+      color: gold;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+
+    th, td {
+      padding: 10px;
+      border-bottom: 1px solid #333;
+      text-align: center;
+    }
+
+    input {
+      width: 100%;
+      padding: 8px;
+      border-radius: 6px;
+      border: none;
+      margin-top: 5px;
+    }
+
+    button {
+      background: gold;
+      color: black;
+      padding: 10px;
+      border: none;
+      border-radius: 8px;
+      font-weight: bold;
+      width: 100%;
+      margin-top: 10px;
+    }
+
+    .whatsapp-btn {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background: #25D366;
+      color: white;
+      padding: 15px;
+      border-radius: 50%;
+      font-size: 20px;
+    }
+
+  </style>
+</head>
+
+<body>
+
+<header>
+  <img src="logo.png" class="logo">
+  <div class="tagline">Scrap Ka Sathi, Bharose Ka Vyapari ♻️</div>
+  <div>Owner: <span style="color:gold;">Shyam Chunne</span></div>
+</header>
+
+<div class="container">
+
+  <!-- PRICE TABLE -->
+  <div class="card">
+    <h2>Scrap Price List 💰</h2>
+
+    <table>
+      <tr><th>Item</th><th>Price (₹/kg)</th></tr>
+
+      <tr>
+        <td>Iron</td>
+        <td><input id="iron" value="25"></td>
+      </tr>
+
+      <tr>
+        <td>Plastic</td>
+        <td><input id="plastic" value="10"></td>
+      </tr>
+
+      <tr>
+        <td>Paper</td>
+        <td><input id="paper" value="12"></td>
+      </tr>
+
+      <tr>
+        <td>Aluminium</td>
+        <td><input id="aluminium" value="80"></td>
+      </tr>
+
+    </table>
+  </div>
+
+  <!-- BOOKING FORM -->
+  <div class="card">
+    <h2>Book Scrap Pickup 📦</h2>
+
+    <input type="text" id="name" placeholder="Your Name">
+    <input type="text" id="phone" placeholder="Phone Number">
+    <input type="text" id="address" placeholder="Address">
+
+    <button onclick="sendWhatsApp()">Book Now</button>
+  </div>
+
+</div>
+
+<!-- FLOATING WHATSAPP -->
+<div class="whatsapp-btn" onclick="sendWhatsApp()">💬</div>
+
+<script>
+function sendWhatsApp() {
+  var name = document.getElementById("name").value;
+  var phone = document.getElementById("phone").value;
+  var address = document.getElementById("address").value;
+
+  var iron = document.getElementById("iron").value;
+  var plastic = document.getElementById("plastic").value;
+  var paper = document.getElementById("paper").value;
+  var aluminium = document.getElementById("aluminium").value;
+
+  var msg = "Scrap Pickup Request:%0A"
+    + "Name: " + name + "%0A"
+    + "Phone: " + phone + "%0A"
+    + "Address: " + address + "%0A%0A"
+    + "Prices:%0A"
+    + "Iron: ₹" + iron + "%0A"
+    + "Plastic: ₹" + plastic + "%0A"
+    + "Paper: ₹" + paper + "%0A"
+    + "Aluminium: ₹" + aluminium;
+
+  window.open("https://wa.me/917218300521?text=" + msg);
+}
+</script>
+
+</body>
+</html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
