@@ -1,87 +1,150 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>KabadiPro</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>KabadiPro</title>
 
-  <style>
-    body {
-      margin: 0;
-      font-family: Arial;
-      background: black;
-      color: white;
-    }
+<style>
+body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  background: #000;
+  color: white;
+}
 
-    body::before {
-      content: "CHUNNE KABADI";
-      position: fixed;
-      top: 40%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      font-size: 60px;
-      color: rgba(255,215,0,0.05);
-      font-weight: bold;
-      z-index: -1;
-    }
+/* FADE IN ANIMATION */
+@keyframes fadeIn {
+  from {opacity:0; transform:translateY(20px);}
+  to {opacity:1; transform:translateY(0);}
+}
 
-    header {
-      text-align: center;
-      padding: 15px;
-      background: #111;
-      box-shadow: 0 0 25px rgba(255,215,0,0.3);
-    }
+/* HEADER */
+header {
+  text-align: center;
+  padding: 20px;
+  animation: fadeIn 1s ease;
+}
 
-    .logo { width: 200px; border-radius: 12px; box-shadow: 0 0 20px gold; }
-    .banner { width: 100%; margin-top: 10px; border-radius: 10px; }
+.logo {
+  width: 130px;
+  border-radius: 50%;
+  box-shadow: 0 0 20px gold;
+  transition: 0.4s;
+}
 
-    .tagline { color: gold; font-weight: bold; }
+.logo:hover {
+  transform: scale(1.1) rotate(5deg);
+}
 
-    .container { padding: 15px; }
+/* BANNER */
+.banner {
+  width: 100%;
+  margin-top: 15px;
+  border-radius: 12px;
+  transition: 0.4s;
+}
 
-    .card {
-      background: #111;
-      padding: 15px;
-      border-radius: 12px;
-      margin-bottom: 20px;
-      box-shadow: 0 0 15px rgba(255,215,0,0.2);
-    }
+.banner:hover {
+  transform: scale(1.03);
+}
 
-    h2 { color: gold; }
+/* TAGLINE */
+.tagline {
+  color: gold;
+  margin-top: 10px;
+  font-weight: bold;
+  animation: fadeIn 2s;
+}
 
-    table { width: 100%; }
+/* CARD */
+.card {
+  background: #111;
+  margin: 15px;
+  padding: 15px;
+  border-radius: 15px;
+  box-shadow: 0 0 15px rgba(255,215,0,0.2);
+  animation: fadeIn 1.5s;
+  transition: 0.3s;
+}
 
-    input {
-      width: 100%;
-      padding: 10px;
-      margin-top: 8px;
-      border-radius: 6px;
-      border: none;
-      background: #222;
-      color: white;
-    }
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 0 25px rgba(255,215,0,0.4);
+}
 
-    button {
-      background: gold;
-      color: black;
-      padding: 10px;
-      border: none;
-      border-radius: 8px;
-      margin-top: 10px;
-      width: 100%;
-      font-weight: bold;
-    }
+/* GRID */
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
 
-    iframe {
-      width: 100%;
-      height: 250px;
-      border-radius: 10px;
-      border: none;
-    }
+.item {
+  background: #000;
+  padding: 10px;
+  border-radius: 10px;
+  text-align: center;
+  transition: 0.3s;
+}
 
-    .admin {
-      display: none;
-    }
-  </style>
+.item:hover {
+  background: gold;
+  color: black;
+  transform: scale(1.05);
+}
+
+/* INPUT */
+input {
+  width: 80%;
+  margin-top: 5px;
+  padding: 6px;
+  border-radius: 6px;
+  border: none;
+}
+
+/* BUTTON */
+button {
+  background: gold;
+  color: black;
+  border: none;
+  padding: 12px;
+  border-radius: 10px;
+  width: 100%;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+button:hover {
+  background: #ffd700;
+  transform: scale(1.05);
+}
+
+/* WHATSAPP FLOAT */
+.whatsapp {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: #25D366;
+  padding: 15px;
+  border-radius: 50%;
+  font-size: 22px;
+  animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+  0% {box-shadow:0 0 0 0 rgba(37,211,102,0.7);}
+  70% {box-shadow:0 0 0 15px rgba(37,211,102,0);}
+  100% {box-shadow:0 0 0 0 rgba(37,211,102,0);}
+}
+
+iframe {
+  width: 100%;
+  height: 250px;
+  border-radius: 12px;
+  border: none;
+}
+
+</style>
 </head>
 
 <body>
@@ -89,84 +152,47 @@
 <header>
   <img src="logo.png" class="logo">
   <div class="tagline">Scrap Ka Sathi, Bharose Ka Vyapari ♻️</div>
-  <div>Owner: <span style="color:gold;">Shyam Chunne</span></div>
   <img src="banner.jpg" class="banner">
 </header>
 
-<div class="container">
+<div class="card">
+  <h3 style="color:gold;">Scrap Prices 💰</h3>
 
-  <!-- PRICE TABLE -->
-  <div class="card">
-    <h2>Scrap Price List 💰</h2>
-
-    <table>
-      <tr><td>Iron</td><td><input id="iron" value="25"></td></tr>
-      <tr><td>Plastic</td><td><input id="plastic" value="10"></td></tr>
-      <tr><td>Paper</td><td><input id="paper" value="12"></td></tr>
-      <tr><td>Aluminium</td><td><input id="aluminium" value="80"></td></tr>
-    </table>
+  <div class="grid">
+    <div class="item">Iron<br><input id="iron" value="25"></div>
+    <div class="item">Plastic<br><input id="plastic" value="10"></div>
+    <div class="item">Paper<br><input id="paper" value="12"></div>
+    <div class="item">Aluminium<br><input id="aluminium" value="80"></div>
   </div>
-
-  <!-- BOOKING -->
-  <div class="card">
-    <h2>Book Scrap Pickup 📦</h2>
-
-    <input type="text" id="name" placeholder="Your Name">
-    <input type="text" id="phone" placeholder="Phone Number">
-    <input type="text" id="address" placeholder="Address">
-
-    <button onclick="sendWhatsApp()">Book Now</button>
-  </div>
-
-  <!-- GOOGLE MAP -->
-  <div class="card">
-    <h2>Our Location 📍</h2>
-
-    <iframe src="https://maps.google.com/maps?q=Wasera%20Sindewahi&t=&z=13&ie=UTF8&iwloc=&output=embed"></iframe>
-  </div>
-
-  <!-- ADMIN LOGIN -->
-  <div class="card">
-    <h2>Admin Panel 🔒</h2>
-
-    <input type="password" id="adminPass" placeholder="Enter Password">
-    <button onclick="login()">Login</button>
-
-    <div id="adminPanel" class="admin">
-      <h3 style="color:gold;">Edit Prices</h3>
-      <button onclick="savePrices()">Save Prices</button>
-    </div>
-  </div>
-
 </div>
 
+<div class="card">
+  <h3 style="color:gold;">Book Pickup 📦</h3>
+
+  <input id="name" placeholder="Name"><br><br>
+  <input id="phone" placeholder="Phone"><br><br>
+  <input id="address" placeholder="Address"><br><br>
+
+  <button onclick="send()">Book Now</button>
+</div>
+
+<div class="card">
+  <h3 style="color:gold;">Location 📍</h3>
+
+  <iframe src="https://maps.google.com/maps?q=Wasera%20Sindewahi&t=&z=13&ie=UTF8&iwloc=&output=embed"></iframe>
+</div>
+
+<div class="whatsapp" onclick="send()">💬</div>
+
 <script>
-function sendWhatsApp() {
-  var name = document.getElementById("name").value;
-  var phone = document.getElementById("phone").value;
-  var address = document.getElementById("address").value;
+function send(){
+  var name=document.getElementById("name").value;
+  var phone=document.getElementById("phone").value;
+  var address=document.getElementById("address").value;
 
-  var msg = "Scrap Pickup Request:%0A"
-    + "Name: " + name + "%0A"
-    + "Phone: " + phone + "%0A"
-    + "Address: " + address;
+  var msg="Scrap Pickup:%0AName:"+name+"%0APhone:"+phone+"%0AAddress:"+address;
 
-  window.open("https://wa.me/917218300521?text=" + msg);
-}
-
-function login() {
-  var pass = document.getElementById("adminPass").value;
-
-  if(pass === "1234") {
-    document.getElementById("adminPanel").style.display = "block";
-    alert("Login Success");
-  } else {
-    alert("Wrong Password");
-  }
-}
-
-function savePrices() {
-  alert("Prices Updated Successfully ✅");
+  window.open("https://wa.me/917218300521?text="+msg);
 }
 </script>
 
