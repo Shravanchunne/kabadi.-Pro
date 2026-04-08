@@ -1,198 +1,196 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>KabadiPro</title>
+  <meta charset="UTF-8">
+  <title>KabadiPro - Scrap Pickup</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<style>
-body {
-  margin: 0;
-  font-family: 'Poppins', sans-serif;
-  background: #000;
-  color: white;
-}
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial;
+      background: #f5f5f5;
+    }
 
-/* FADE IN ANIMATION */
-@keyframes fadeIn {
-  from {opacity:0; transform:translateY(20px);}
-  to {opacity:1; transform:translateY(0);}
-}
+    header {
+      background: #0f9d58;
+      color: white;
+      text-align: center;
+      padding: 40px;
+    }
 
-/* HEADER */
-header {
-  text-align: center;
-  padding: 20px;
-  animation: fadeIn 1s ease;
-}
+    .btn {
+      padding: 10px 20px;
+      margin: 10px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
 
-.logo {
-  width: 130px;
-  border-radius: 50%;
-  box-shadow: 0 0 20px gold;
-  transition: 0.4s;
-}
+    .btn-primary {
+      background: black;
+      color: white;
+    }
 
-.logo:hover {
-  transform: scale(1.1) rotate(5deg);
-}
+    .btn-whatsapp {
+      background: #25D366;
+      color: white;
+    }
 
-/* BANNER */
-.banner {
-  width: 100%;
-  margin-top: 15px;
-  border-radius: 12px;
-  transition: 0.4s;
-}
+    section {
+      padding: 20px;
+      text-align: center;
+    }
 
-.banner:hover {
-  transform: scale(1.03);
-}
+    table {
+      width: 80%;
+      margin: auto;
+      border-collapse: collapse;
+    }
 
-/* TAGLINE */
-.tagline {
-  color: gold;
-  margin-top: 10px;
-  font-weight: bold;
-  animation: fadeIn 2s;
-}
+    th, td {
+      border: 1px solid #ddd;
+      padding: 10px;
+    }
 
-/* CARD */
-.card {
-  background: #111;
-  margin: 15px;
-  padding: 15px;
-  border-radius: 15px;
-  box-shadow: 0 0 15px rgba(255,215,0,0.2);
-  animation: fadeIn 1.5s;
-  transition: 0.3s;
-}
+    .price-input {
+      width: 60px;
+      padding: 5px;
+      text-align: center;
+    }
 
-.card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 0 25px rgba(255,215,0,0.4);
-}
+    form input, form select {
+      width: 80%;
+      padding: 10px;
+      margin: 10px;
+    }
 
-/* GRID */
-.grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 10px;
-}
+    footer {
+      background: black;
+      color: white;
+      text-align: center;
+      padding: 15px;
+    }
 
-.item {
-  background: #000;
-  padding: 10px;
-  border-radius: 10px;
-  text-align: center;
-  transition: 0.3s;
-}
-
-.item:hover {
-  background: gold;
-  color: black;
-  transform: scale(1.05);
-}
-
-/* INPUT */
-input {
-  width: 80%;
-  margin-top: 5px;
-  padding: 6px;
-  border-radius: 6px;
-  border: none;
-}
-
-/* BUTTON */
-button {
-  background: gold;
-  color: black;
-  border: none;
-  padding: 12px;
-  border-radius: 10px;
-  width: 100%;
-  font-weight: bold;
-  transition: 0.3s;
-}
-
-button:hover {
-  background: #ffd700;
-  transform: scale(1.05);
-}
-
-/* WHATSAPP FLOAT */
-.whatsapp {
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
-  background: #25D366;
-  padding: 15px;
-  border-radius: 50%;
-  font-size: 22px;
-  animation: pulse 1.5s infinite;
-}
-
-@keyframes pulse {
-  0% {box-shadow:0 0 0 0 rgba(37,211,102,0.7);}
-  70% {box-shadow:0 0 0 15px rgba(37,211,102,0);}
-  100% {box-shadow:0 0 0 0 rgba(37,211,102,0);}
-}
-
-iframe {
-  width: 100%;
-  height: 250px;
-  border-radius: 12px;
-  border: none;
-}
-
-</style>
+    .whatsapp-float {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background: #25D366;
+      color: white;
+      padding: 15px;
+      border-radius: 50%;
+      text-decoration: none;
+      font-size: 20px;
+    }
+  </style>
 </head>
 
 <body>
 
 <header>
-  <img src="logo.png" class="logo">
-  <div class="tagline">Scrap Ka Sathi, Bharose Ka Vyapari ♻️</div>
-  <img src="banner.jpg" class="banner">
+  <h1>KabadiPro</h1>
+  <p>Sell Your Scrap at Best Price 💰</p>
+
+  <button class="btn btn-primary" onclick="scrollToForm()">Book Pickup</button>
+
+  <button class="btn btn-whatsapp"
+    onclick="window.open('https://wa.me/917218300521','_blank')">
+    WhatsApp
+  </button>
 </header>
 
-<div class="card">
-  <h3 style="color:gold;">Scrap Prices 💰</h3>
+<section>
+  <h2>Today's Scrap Rates (Editable)</h2>
 
-  <div class="grid">
-    <div class="item">Iron<br><input id="iron" value="25"></div>
-    <div class="item">Plastic<br><input id="plastic" value="10"></div>
-    <div class="item">Paper<br><input id="paper" value="12"></div>
-    <div class="item">Aluminium<br><input id="aluminium" value="80"></div>
-  </div>
-</div>
+  <table>
+    <tr><th>Scrap</th><th>Price (₹/kg)</th></tr>
 
-<div class="card">
-  <h3 style="color:gold;">Book Pickup 📦</h3>
+    <tr>
+      <td>Newspaper</td>
+      <td><input class="price-input" value="14"></td>
+    </tr>
 
-  <input id="name" placeholder="Name"><br><br>
-  <input id="phone" placeholder="Phone"><br><br>
-  <input id="address" placeholder="Address"><br><br>
+    <tr>
+      <td>Plastic</td>
+      <td><input class="price-input" value="20"></td>
+    </tr>
 
-  <button onclick="send()">Book Now</button>
-</div>
+    <tr>
+      <td>Iron</td>
+      <td><input class="price-input" value="30"></td>
+    </tr>
 
-<div class="card">
-  <h3 style="color:gold;">Location 📍</h3>
+    <tr>
+      <td>E-Waste</td>
+      <td><input class="price-input" value="50"></td>
+    </tr>
 
-  <iframe src="https://maps.google.com/maps?q=Wasera%20Sindewahi&t=&z=13&ie=UTF8&iwloc=&output=embed"></iframe>
-</div>
+  </table>
 
-<div class="whatsapp" onclick="send()">💬</div>
+  <p>👉 Tu yaha daily price change kar sakta hai</p>
+</section>
+
+<section>
+  <h2>How It Works</h2>
+  <p>1️⃣ Select Scrap</p>
+  <p>2️⃣ Book Pickup</p>
+  <p>3️⃣ Get Paid</p>
+</section>
+
+<section id="form">
+  <h2>Book Pickup</h2>
+
+  <form onsubmit="submitForm(event)">
+    <input type="text" placeholder="Name" required><br>
+    <input type="text" placeholder="Mobile Number" required><br>
+    <input type="text" placeholder="Address" required><br>
+
+    <select>
+      <option>Newspaper</option>
+      <option>Plastic</option>
+      <option>Iron</option>
+      <option>E-Waste</option>
+    </select><br>
+
+    <input type="text" placeholder="Approx Weight"><br>
+    <input type="date"><br>
+
+    <button class="btn btn-primary">Schedule Pickup</button>
+  </form>
+</section>
+
+<section>
+  <h2>Why Choose Us</h2>
+  <p>✔ Best Prices</p>
+  <p>✔ Free Pickup</p>
+  <p>✔ Instant Payment</p>
+</section>
+
+<section>
+  <h2>Contact Us</h2>
+  <p>📞 9604657094</p>
+  <p>💬 WhatsApp: 7218300521</p>
+  <p>📍 Taluka Sindewahi, District Chandrapur, Maharashtra</p>
+</section>
+
+<footer>
+  <p>© 2026 KabadiPro</p>
+</footer>
+
+<a class="whatsapp-float"
+   href="https://wa.me/917218300521"
+   target="_blank">💬</a>
 
 <script>
-function send(){
-  var name=document.getElementById("name").value;
-  var phone=document.getElementById("phone").value;
-  var address=document.getElementById("address").value;
+function scrollToForm() {
+  document.getElementById("form").scrollIntoView({behavior: "smooth"});
+}
 
-  var msg="Scrap Pickup:%0AName:"+name+"%0APhone:"+phone+"%0AAddress:"+address;
-
-  window.open("https://wa.me/917218300521?text="+msg);
+function submitForm(e) {
+  e.preventDefault();
+  alert("Pickup Booked! We will contact you soon.");
+  window.open("https://wa.me/917218300521?text=Hi KabadiPro, I want to book scrap pickup", "_blank");
 }
 </script>
 
