@@ -6,28 +6,46 @@
     <title>KabadiPro - Scrap Pickup</title>
 
     <style>
+        /* Background with Watermark */
         body {
             margin: 0;
             font-family: Arial, sans-serif;
-            background: #000;
-            color: #fff;
+            background: linear-gradient(135deg, #f8f8f8, #ffffff);
+            color: #333;
+            position: relative;
+        }
+
+        /* Watermark Text */
+        body::before {
+            content: "ChunneTours & MiniTransport";
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 60px;
+            color: rgba(212, 175, 55, 0.08); /* light golden */
+            font-weight: bold;
+            white-space: nowrap;
+            z-index: -1;
+            pointer-events: none;
+            text-align: center;
         }
 
         header {
             text-align: center;
             padding: 20px;
-            background: #111;
+            background: #ffffff;
             border-bottom: 2px solid gold;
         }
 
         .logo {
             width: 200px;
             border-radius: 12px;
-            box-shadow: 0 0 20px gold;
+            box-shadow: 0 0 15px rgba(212, 175, 55, 0.6);
         }
 
         .tagline {
-            color: gold;
+            color: #b8962e;
             font-weight: bold;
             margin-top: 10px;
         }
@@ -44,15 +62,15 @@
         }
 
         .card {
-            background: #111;
+            background: #ffffff;
             padding: 20px;
             border-radius: 12px;
             margin-bottom: 20px;
-            box-shadow: 0 0 15px rgba(255, 215, 0, 0.2);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
         }
 
         h2 {
-            color: gold;
+            color: #b8962e;
             text-align: center;
         }
 
@@ -65,12 +83,12 @@
         th, td {
             padding: 10px;
             text-align: center;
-            border-bottom: 1px solid #333;
+            border-bottom: 1px solid #ddd;
         }
 
         th {
-            background: #000;
-            color: gold;
+            background: #f2f2f2;
+            color: #b8962e;
         }
 
         input, select {
@@ -78,12 +96,12 @@
             padding: 10px;
             margin-top: 10px;
             border-radius: 6px;
-            border: none;
+            border: 1px solid #ccc;
         }
 
         button {
-            background: gold;
-            color: #000;
+            background: #d4af37;
+            color: #fff;
             padding: 12px;
             border: none;
             border-radius: 8px;
@@ -95,7 +113,7 @@
         }
 
         button:hover {
-            background: #ffd700;
+            background: #b8962e;
         }
 
         .contact p {
@@ -115,19 +133,19 @@
             bottom: 20px;
             right: 20px;
             background: #25D366;
-            color: #000;
+            color: #fff;
             padding: 15px;
             border-radius: 50%;
             font-size: 22px;
             text-decoration: none;
-            box-shadow: 0 0 10px rgba(0,0,0,0.5);
+            box-shadow: 0 0 10px rgba(0,0,0,0.3);
         }
 
         footer {
             text-align: center;
             padding: 15px;
-            background: #111;
-            border-top: 1px solid gold;
+            background: #ffffff;
+            border-top: 1px solid #ddd;
             margin-top: 20px;
         }
     </style>
@@ -137,10 +155,10 @@
 
     <!-- HEADER -->
     <header>
-        <!-- Apna logo yaha upload karke same folder me rakhe: logo.png -->
+        <!-- Ensure logo.png is uploaded in the same folder -->
         <img src="logo.png" alt="KabadiPro Logo" class="logo">
         <div class="tagline">Scrap Ka Sathi, Bharose Ka Vyapari ♻️</div>
-        <div class="owner">Owner: <span style="color: gold;">Shyam Chunne</span></div>
+        <div class="owner">Owner: <span style="color: #b8962e;">Shyam Chunne</span></div>
     </header>
 
     <div class="container">
