@@ -1,12 +1,11 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="mr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>KabadiPro - Scrap Pickup</title>
 
     <style>
-        /* Background with Watermark */
         body {
             margin: 0;
             font-family: Arial, sans-serif;
@@ -15,27 +14,26 @@
             position: relative;
         }
 
-        /* Watermark Text */
+        /* Watermark Background */
         body::before {
             content: "ChunneTours & MiniTransport";
             position: fixed;
             top: 50%;
             left: 50%;
             transform: translate(-50%, -50%);
-            font-size: 60px;
-            color: rgba(212, 175, 55, 0.08); /* light golden */
+            font-size: 55px;
+            color: rgba(212, 175, 55, 0.08);
             font-weight: bold;
-            white-space: nowrap;
             z-index: -1;
-            pointer-events: none;
             text-align: center;
+            pointer-events: none;
         }
 
         header {
             text-align: center;
             padding: 20px;
             background: #ffffff;
-            border-bottom: 2px solid gold;
+            border-bottom: 2px solid #d4af37;
         }
 
         .logo {
@@ -48,6 +46,7 @@
             color: #b8962e;
             font-weight: bold;
             margin-top: 10px;
+            font-size: 18px;
         }
 
         .owner {
@@ -91,7 +90,7 @@
             color: #b8962e;
         }
 
-        input, select {
+        input {
             width: 100%;
             padding: 10px;
             margin-top: 10px;
@@ -116,16 +115,16 @@
             background: #b8962e;
         }
 
-        .contact p {
-            margin: 8px 0;
-            text-align: center;
-        }
-
         iframe {
             width: 100%;
             height: 250px;
             border: 0;
             border-radius: 10px;
+        }
+
+        .contact p {
+            text-align: center;
+            margin: 8px 0;
         }
 
         .whatsapp-float {
@@ -138,7 +137,6 @@
             border-radius: 50%;
             font-size: 22px;
             text-decoration: none;
-            box-shadow: 0 0 10px rgba(0,0,0,0.3);
         }
 
         footer {
@@ -146,7 +144,6 @@
             padding: 15px;
             background: #ffffff;
             border-top: 1px solid #ddd;
-            margin-top: 20px;
         }
     </style>
 </head>
@@ -155,36 +152,40 @@
 
     <!-- HEADER -->
     <header>
-        <!-- Ensure logo.png is uploaded in the same folder -->
         <img src="logo.png" alt="KabadiPro Logo" class="logo">
-        <div class="tagline">Scrap Ka Sathi, Bharose Ka Vyapari ♻️</div>
-        <div class="owner">Owner: <span style="color: #b8962e;">Shyam Chunne</span></div>
+        <div class="tagline">
+            Scrap Ka Sathi, Bharose Ka Vyapari ♻️ <br>
+            <span>तुमचा विश्वासू कबाडी सेवा</span>
+        </div>
+        <div class="owner">
+            Owner / मालक: <span style="color:#b8962e;">Shyam Chunne</span>
+        </div>
     </header>
 
     <div class="container">
 
         <!-- SCRAP PRICE TABLE -->
         <div class="card">
-            <h2>Scrap Price List 💰</h2>
+            <h2>Scrap Price List / आजचे भंगार दर 💰</h2>
             <table>
                 <tr>
-                    <th>Item</th>
-                    <th>Price (₹/kg)</th>
+                    <th>Item / वस्तू</th>
+                    <th>Price (₹/kg) / दर</th>
                 </tr>
                 <tr>
-                    <td>Iron</td>
+                    <td>Iron / लोखंड</td>
                     <td><input id="iron" value="25"></td>
                 </tr>
                 <tr>
-                    <td>Plastic</td>
+                    <td>Plastic / प्लास्टिक</td>
                     <td><input id="plastic" value="10"></td>
                 </tr>
                 <tr>
-                    <td>Paper</td>
+                    <td>Paper / कागद</td>
                     <td><input id="paper" value="12"></td>
                 </tr>
                 <tr>
-                    <td>Aluminium</td>
+                    <td>Aluminium / अॅल्युमिनियम</td>
                     <td><input id="aluminium" value="80"></td>
                 </tr>
             </table>
@@ -192,32 +193,32 @@
 
         <!-- BOOK PICKUP FORM -->
         <div class="card">
-            <h2>Book Scrap Pickup 📦</h2>
-            <input type="text" id="name" placeholder="Your Name" required>
-            <input type="text" id="phone" placeholder="Phone Number" required>
-            <input type="text" id="address" placeholder="Address" required>
-            <button onclick="sendWhatsApp()">Book Now</button>
+            <h2>Book Scrap Pickup / भंगार उचल सेवा 📦</h2>
+            <input type="text" id="name" placeholder="Your Name / तुमचे नाव" required>
+            <input type="text" id="phone" placeholder="Phone Number / मोबाईल नंबर" required>
+            <input type="text" id="address" placeholder="Address / पत्ता" required>
+            <button onclick="sendWhatsApp()">Book Now / बुक करा</button>
         </div>
 
         <!-- LOCATION -->
         <div class="card">
-            <h2>Our Location 📍</h2>
+            <h2>Our Location / आमचे स्थान 📍</h2>
             <iframe src="https://maps.google.com/maps?q=Wasera%20Sindewahi%20Chandrapur&t=&z=13&ie=UTF8&iwloc=&output=embed"></iframe>
         </div>
 
         <!-- CONTACT -->
         <div class="card contact">
-            <h2>Contact Us</h2>
+            <h2>Contact Us / संपर्क करा</h2>
             <p>📞 Phone: 9604657094</p>
             <p>💬 WhatsApp: 7218300521</p>
-            <p>📍 Wasera, Taluka Sindewahi, Dist. Chandrapur, Maharashtra - 441223</p>
+            <p>📍 At Wasera, Taluka Sindewahi, Dist. Chandrapur, Maharashtra - 441223</p>
         </div>
 
     </div>
 
     <!-- FOOTER -->
     <footer>
-        <p>© 2026 KabadiPro. All Rights Reserved.</p>
+        <p>© 2026 KabadiPro | Chunnekabadi. All Rights Reserved.</p>
     </footer>
 
     <!-- FLOATING WHATSAPP BUTTON -->
@@ -233,18 +234,19 @@
             var address = document.getElementById("address").value;
 
             if(name === "" || phone === "" || address === "") {
-                alert("Please fill all details.");
+                alert("कृपया सर्व माहिती भरा / Please fill all details.");
                 return;
             }
 
-            var msg = `Scrap Pickup Request:
-Name: ${name}
-Phone: ${phone}
-Address: ${address}`;
+            var msg = `भंगार उचल सेवा / Scrap Pickup Request:
+नाव / Name: ${name}
+मोबाईल / Phone: ${phone}
+पत्ता / Address: ${address}`;
 
             var url = "https://wa.me/917218300521?text=" + encodeURIComponent(msg);
             window.open(url, "_blank");
         }
     </script>
+
 </body>
 </html>
